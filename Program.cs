@@ -26,10 +26,18 @@ namespace Collections_Practice
 
             Dictionary<string,string> users = new Dictionary<string, string>();
             Random rand = new Random();
-            users.Add($"{namearray[0]}", $"{icecream[rand.Next(0,icecream.Count)]}");
-            users.Add($"{namearray[1]}", $"{icecream[rand.Next(0,icecream.Count)]}");
-            users.Add($"{namearray[2]}", $"{icecream[rand.Next(0,icecream.Count)]}");
-            users.Add($"{namearray[3]}", $"{icecream[rand.Next(0,icecream.Count)]}");
+            // users.Add(namearray[0], icecream[rand.Next(0,icecream.Count)]);
+            // users.Add($"{namearray[1]}", $"{icecream[rand.Next(0,icecream.Count)]}");
+            // users.Add($"{namearray[2]}", $"{icecream[rand.Next(0,icecream.Count)]}");
+            // users.Add($"{namearray[3]}", $"{icecream[rand.Next(0,icecream.Count)]}");
+
+            //create a loop that on each iteratioh does users.Add and also iterates
+                //loop name array
+            foreach (string name in namearray)
+            {
+                string randice = icecream[rand.Next(0,icecream.Count)];
+                users.Add(name,randice);
+            }
 
             foreach (KeyValuePair<string,string> entry in users)
             {
